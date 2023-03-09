@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html id="htmlroot" lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/master.css">
+  <title>Request Project | درخواست پروژه</title>
+</head>
+<body>
+  <header>
+<nav class="mast-navbar">
+<a href="#" class="mast-menu-show"><i class="fa fa-bars" aria-hidden="true"></i></a>
+<ul class="mast-menu-drop">
+<li>
+
+ <a href="#" onclick="switchDir();this.innerHTML='Switch ltr'">Switch rtl<i class="fa fa-align-right" aria-hidden="true"></i>
+</a>
+  </li>
+</ul>
+<a href="#" onclick="changeTheme()"><i class="fa fa-sun-o fa-lg" aria-hidden="true"></i></a>
+</nav>
+
+</header>
+  <main>
+    <form class="mast-form" action="index.html" method="post">
+      <fieldset class="mast-fieldset mast-border-round">
+        <legend> Project Owner </legend>
+
+        <div class="mast-grid-item">
+          <label for="firstname">First Name: </label><br>
+          <input class="mast-input-field" type="text" name="firstname" value="" placeholder="Your First Name" required autofocus>
+        </div>
+
+        <div class="mast-grid-item">
+          <label for="lastname">Last Name: </label><br>
+          <input class="mast-input-field" type="text" name="lastname" value="" placeholder="Your Last Name" required>
+        </div>
+
+        <div class="mast-grid-item">
+          <label for="email">Email: </label><br>
+          <input class="mast-input-field" type="email" name="email" value="" placeholder="Your Email" required>
+        </div>
+
+        <div class="mast-grid-item">
+          <label for="tel">Tel: </label><br>
+          <input class="mast-input-field" type="tel" name="tel" value="" placeholder="Your Tel" required>
+        </div>
+      </fieldset>
+      <fieldset class="mast-fieldset mast-border-round">
+        <legend class=""> Project Request </legend>
+        <div class="mast-grid-item">
+          <label for="title">Title:</label>
+          <input  class="mast-input-field" type="text" name="title" value="" placeholder="name of your site">
+        </div>
+
+        <div class="mast-grid-item">
+          <label for="date">Deadline:</label>
+          <input  class="mast-input-field" type="date" name="date" value="">
+        </div>
+        <div class="mast-grid-item">
+          <label for="attachment">Attachment: </label>
+          <input class="mast-input-field" type="file" name="attachment" value="" placeholder="attach template,scratch">
+        </div>
+        <div class="mast-grid-item">
+          <label for="description">Description</label>
+          <input class="mast-input-field mast-input-description" type="description" name="description" value="" placeholder="Descripe your project style, any important note and etc..">
+        </div>
+      </fieldset>
+
+      <a href="" class="mast-border-round mast-button mast-submit" type="submit" name="Submit">Submit Request</a>
+      </form>
+    </main>
+    <script type="text/javascript">
+    var bool=1;
+    function changeTheme(){
+      if (bool) {
+        document.body.className+=" mast-dark";
+        bool=0;
+      }
+      else {
+        document.body.className-=" mast-dark";
+        bool=1
+      }
+    }
+    function switchDir(){
+      if (document.getElementById('htmlroot').dir!='rtl') {
+    document.getElementById('htmlroot').dir='rtl';
+      }
+      else {
+        document.getElementById('htmlroot').dir='ltr';
+      }
+    }
+    </script>
+  </body>
+  </html>
