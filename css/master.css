@@ -112,9 +112,11 @@ main {
 }
 
 .mast-avatar {
-  width: 10vw;
+  max-width: 144px;
+  max-height:192px;
   object-fit: fill;
   border-radius: 25%;
+
 }
 
 .mast-avatar-box {
@@ -185,7 +187,10 @@ main {
 .mast-submit:hover {
   width: 300px;
 }
-
+.mast-header-title{
+  text-align: center;
+  width: 100%;
+}
 @media (max-width:475px) {
   .mast-grid-container-main {
     grid-template-areas: "sidebar" "main";
@@ -194,11 +199,6 @@ main {
 
   .mast-fieldset {
     grid-template-columns: 1fr;
-  }
-
-  .mast-avatar {
-    max-width: 144;
-    max-height:192;
   }
 }
 
