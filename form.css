@@ -1,0 +1,53 @@
+:root{
+    --hover-color:red;
+    --color:black;
+    --bgcolor:white;
+    --border-hover:rgb(34, 30, 30);
+}
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: "Vazirmatn RD";
+    src: url('fonts/webfonts/Vazirmatn-RD-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+body{
+    margin: 0;
+    font-family:"Vazirmatn RD";
+    font-weight:700;
+    font-size: 18px;
+}
+.form{
+    display: grid;
+    margin: 50px 32px;
+}
+.form-section{
+    margin: 16px 8px;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    column-gap: 16px;
+    row-gap: 14px;
+}
+.form-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content:space-between;
+    row-gap: 6px;
+    height: 69;
+}
+.center{
+    text-align: center;
+    justify-content: center;
+}
+.input-box{
+    border: 1.5px solid rgb(34, 30, 30);
+    border-radius: 8px;
+}
+@media (max-width:420px) {
+    .form-section{
+        grid-template-columns:repeat(1,1fr);
+    }
+}
