@@ -1,7 +1,9 @@
 :root{
     --hover-color:red;
-    --color:black;
-    --bgcolor:white;
+    --colorlight:black;
+    --colordark:rgb(234, 234, 234);
+    --bglight:white;
+    --bgdark:rgb(44, 42, 42);
     --border-hover:rgb(34, 30, 30);
 }
 *{
@@ -16,9 +18,15 @@
 }
 body{
     margin: 0;
+    background-color: var(--bglight);
+    color: var(--colorlight);
     font-family:"Vazirmatn RD";
     font-weight:700;
     font-size: 18px;
+}
+.dark{
+    background-color:var(--bgdark);
+    color: var(--colordark);
 }
 .form{
     display: grid;
@@ -45,6 +53,20 @@ body{
 .input-box{
     border: 1.5px solid rgb(34, 30, 30);
     border-radius: 8px;
+}
+.input-box::placeholder,.input-box{
+    font-family:"Vazirmatn RD";
+}
+.submit-section{
+    padding: 16px;
+}
+.submit-btn{
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+}
+.submit-btn:hover{
+    background-color: var(--hover-color);
 }
 @media (max-width:420px) {
     .form-section{

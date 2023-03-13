@@ -7,25 +7,27 @@
     <link rel="stylesheet" href="form.css">
     <title>ثبت نام</title>
 </head>
-<body>
+<body class="">
     <form class="form" action="">
         <div class="form-section">  
             <div class="form-content">
                 <label for="firstName">نام:</label>
-                <input class="input-box" type="text" name="firstName" placeholder="نام">
+                <input class="input-box" type="text" name="firstName" id="firstName" placeholder="نام">
                 <label for="lastName">نام خوانوادگی:</label>
-                <input class="input-box" type="text" name="lastName" placeholder="نام خوانوادگی">
+                <input class="input-box" type="text" name="lastName" id="lastName" placeholder="نام خوانوادگی">
             </div>
             <div class="form-content">
-                <label for="">نام پدر:</label>
-                
+                <label for="nationid">کدملی:</label>
+                <input class="input-box" name="nationid" id="nationid" type="text" placeholder="کدملی">
+                <label for="fatherName">نام پدر:</label>
+                <input class="input-box" type="text" name="fatherName" id="fatherName" placeholder="نام پدر">
             </div>
             <div class="form-content">
                 <label for="provinces">استان:</label>
                 <select class="input-box" name="provinces" id="provinces" onclick="citiesLoad();">
                     <option value=""><-لطفا یک استان را انتخاب کنید!!.-></option>
-                    <option value="east-azerbaijan">آذربایجان شرقی</option>
-                    <option value="west-azerbaijan">آذربایجان غربی</option>
+                    <option value="eastazerbaijan">آذربایجان شرقی</option>
+                    <option value="westazerbaijan">آذربایجان غربی</option>
                     <option value="ardabil">اردبیل</option>
                     <option value="isfahan">اصفهان</option>
                     <option value="alborz">البرز</option>
@@ -58,13 +60,21 @@
                 </select>
                 <label for="cities">شهر:</label>
                 <select class="input-box" name="cities" id="cities">
-                    
                 </select>
             </div>
+            <div class="form-content">
+<label for="birthDate">تاریخ تولد:</label>
+            </div>
         </div>
-        <input type="submit">
+        <div class="submit-section">
+            <input type="checkbox" name="acceptTerms" id    ="acceptTerms" value="acceptTerms">
+            <label for="accpetTerms">تمام قوانین را خوانده ام .</label>
+            <br>
+            <input class="submit-btn" type="submit" id="submit" value="ثبت نام" disabled>
+        </div>
     </form>
     <script>
+        
         //start select
         const alborz=["کرج", "آسارا", "فردیس", "نظرآباد", "هشتگرد", "محمدشهر", "شهرجدیدهشتگرد", "مشکین‌دشت", "گلسار", "طالقان", "نازلو", "اشتهارد", "گوهردشت", "ماهدشت", "چهارباغ", "کمال‌شهر", "شهرکیسمین", "ساوجبلاغ", "دانشگاه کرج", "رباطکریم", "فشم", "گرمدره", "شال", "باغستان","قرچک", "آبگرم", "شهرک البرز", "آبیک", "کوهسار", "رودهن", "طرشت", "کمجان", "فیروزکوه", "بومهن", "پرند", "کردماهان", "منظریه", "سلطان‌کلا", "تنکمان", "گلپایگان", "کوهستان", "حصارولیعصر", "کیلان", "صفادشت", "آسماری", "گلدشت", "مسجدسلیمانی", "نرجه"];
         const ardabil=["مشگین شهر", "نمین", "پارس آباد", "خلخال", "بیله سوار", "گرمی", "سرعین", "نیر", "کوثر", "اردبیل", "آبی بیگلو", "اسلام اباد", "اصلاندوز", "آق کلا", "رضی", "کلور", "فخراباد", "قشلاق دشت", "سنگدوین", "شورگل","عنبران", "تازه کند انگوت", "جعفرآباد", "حیران علیا", "رضوان شهر", "سیلوانه", "شاهین دژ", "کوراییم", "گیوی چای", "مرادلو", "نازک علیا", "نظرکهریزی", "هیر", "هیرچین", "هشتجین", "هوزدره"];
@@ -152,6 +162,7 @@
             if(provinceSelect.value==="")
             {
                 citiesSelect.value="";
+                citiesSelect.textContent="";
                 let option=document.createElement("option");
                 option.value="";
                 option.innerHTML="<-ابتدا استان را انتخاب کنید.->";
@@ -169,6 +180,21 @@
             }
         }
         //end select
+        let acceptTerms=document.querySelector("#acceptTerms");
+        let submitbtn=document.getElementById("submit");
+        acceptTerms.addEventListener("change",()=>{
+            if(acceptTerms.checked)
+            {
+                submitbtn.disabled=false;
+            }
+            else{
+                submitbtn.disabled=true;
+            }
+        });
+        function logForm(){
+            let userForm={firstName:document.querySelector("#firstName").value,lastName:document.querySelector("#lastName").value,fatherName:document.querySelector("#fatherName").value,province:document.querySelector("#provinces").value,city:document.querySelector("#cities").value,nationid:document.querySelector("#nationid").value};
+            console.log(userForm);
+        }
     </script>
 </body>
 </html>
